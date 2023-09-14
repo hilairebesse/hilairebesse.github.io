@@ -37,7 +37,7 @@
     </main>
     <div id="modal" class="modal">
     <div class="modal-content">
-        <div id="needle"></div>
+        <img id="rotatingImage" src="URL_DE_VOTRE_IMAGE" alt="Image tournante">
         <p>C'est parti !</p>
     </div>
 </div>
@@ -80,18 +80,14 @@
 }
 
 
-#needle {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    width: 4px;
-    height: 50px;
-    background-color: #0055a4;
-    transform-origin: 50% 100%; /* Le point autour duquel l'aiguille tournera */
-    animation: rotateNeedle 2s linear infinite; /* 2 secondes pour compléter une rotation */
+#rotatingImage {
+    width: 100px;  /* Ajustez la taille selon vos besoins */
+    height: auto;
+    animation: rotateImage 2s linear infinite;
+    transform-origin: center;
 }
 
-@keyframes rotateNeedle {
+@keyframes rotateImage {
     from {
         transform: rotate(0deg);
     }
