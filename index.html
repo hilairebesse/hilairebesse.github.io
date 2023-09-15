@@ -34,6 +34,12 @@
             <button onclick="chooseActivity('soir2')">Ana, cliquez ici pour tirer au hasard votre activité 2 du soir</button>
             <p id="activitySoir2"></p>
         </section>
+
+        <section class="category" id="tmtc">
+            <h2 style="color:#fff">Activités tu connais 🍑</h2>
+            <button onclick="chooseActivity('tmtc')">Ana, cliquez ici pour tirer au hasard votre activité de t'as capté</button>
+            <p id="activitytmtc"></p>
+        </section>
     </main>
     <div id="modal" class="modal">
     <div class="modal-content">
@@ -71,12 +77,41 @@ text-align:center;
 
 }
 
+#tmtc {
+    background-color: #fdc0c0; /* fond bleu marine */
+    text-align:center;
+
+}
+
+p#activityJour {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+p#activityJour2 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+
+p#activitytmtc {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
     p#activitySoir {
     color: #fff;
+    font-size: 25px;
+    font-weight: 600;
 }
 
        p#activitySoir2 {
     color: #fff;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .modal-content {
@@ -96,7 +131,7 @@ text-align:center;
     height: auto;
     animation: rotateImage 3s linear infinite;
     transform-origin: center;
-    
+
 }
 
 @keyframes rotateImage {
@@ -201,6 +236,15 @@ const activitiesSoir = [
 "On prend un train pour Dunkerque"
 ];
 
+// Vous pouvez ajouter ici les activités pour "tmtc"
+const activitiesTmtc = [
+    "Vieux missionaire de 1 min parce que c'est chiant sinon",
+    "Nuit d'amour endiablée, le premier qui dort est un pd",
+    "Sexe & Cheese - Manger du fromage en faisant l'amour. Sans gluten possible.",
+    "Rien du tout frère - Hilaire dort sur le canap",
+    "Ana décide absolument de tout - Hilaire n'a aucun droit t'es fou"
+];
+
 let chosenActivitiesJour = [];
 let chosenActivitiesSoir = [];
 
@@ -250,6 +294,11 @@ function chooseActivity(time) {
                 if (!chosenActivitiesSoir.includes(activity)) chosenActivitiesSoir.push(activity);
                 document.getElementById('activitySoir2').textContent = activity;
                 break;
+
+                case 'tmtc':
+                activity = activitiesTmtc[Math.floor(Math.random() * activitiesTmtc.length)];
+                document.getElementById('activitytmtc').textContent = activity;
+                break;
         }
     }, 2000);
 }
@@ -264,4 +313,3 @@ function showSuspense() {
 }
 
 </script>
-
